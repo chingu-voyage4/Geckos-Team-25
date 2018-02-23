@@ -1,3 +1,34 @@
+# Voyage4-Geckos-Team-25
+Geckos25Trello  App.
+
+# Stack
+**Front End** 
+- ReactJS
+- Bootstrap
+- HTML
+- CSS3
+
+**Back End**
+- NodeJS
+- MongDB
+- Express
+
+
+# Authors
+
+Phil [Phil](https://github.com/Philness)
+
+Kenito Henry [Kenito Henry ](https://github.com/kenitohenry)
+
+Carlos Peña [Carlos Peña] (https://github.com/corochena)
+
+Roberto Hernandez [Roberto Hernandez](https://github.com/blarzHernandez)
+
+
+**------------------------------------------------------------------------------------------------------------------------**
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
