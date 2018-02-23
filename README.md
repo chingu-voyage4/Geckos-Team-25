@@ -20,7 +20,7 @@ Phil [Phil](https://github.com/Philness)
 
 Kenito Henry [Kenito Henry ](https://github.com/kenitohenry)
 
-Carlos Peña [Carlos Peña] (https://github.com/corochena)
+Carlos Peña [Carlos Peña](https://github.com/corochena)
 
 Roberto Hernandez [Roberto Hernandez](https://github.com/blarzHernandez)
 
