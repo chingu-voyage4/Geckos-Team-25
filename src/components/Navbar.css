@@ -1,42 +1,22 @@
 .navbar-registered{
     margin-top: 0%;
     font-size: 1.2em;
-    padding:1%;
+    
     display:flex;
     list-style: none;
     background-color:rgb(2, 106, 167);
     flex-wrap: nowrap;
-    justify-content: space-between;
+    align-items: center;
 
 
-}
- .button-group{
-    display:flex;
-    color:white;
-    width: 7%;
-    justify-content: space-between;
-    align-items: flex-start;
-    
-}
-.plus, .info, .profile-pic, .bell, #sb{
-    border-radius: 7%;
-    padding:5%;
-    background-color: rgba(120, 187, 228, 0.432);
-    
 }
 .navbar-registered li{
-    margin: 0 3px 0 3px;
-}
-.logo{
-    color:rgba(204,255,237,1);
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Damion', cursive;
-    font-size: 20px;
-    height: 25px;
+  
+    flex: 0 0 auto;
 }
 .boards{
-    padding:5%;
+   
+    padding:1%;
     font-size: 20px;
     background-color: rgba(120, 186, 228, 0.432);
     border-radius: 5%;
@@ -49,18 +29,116 @@
     text-decoration: none;
 }
 #sb{
-   border-radius: 4%;
-   height:25px;
-   border: none;
-   font-family: Arial, Helvetica, sans-serif;
-   outline: none;
-   color: white;
 
+    
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    color: white;
+ 
+ }
+ :-ms-input-placeholder {
+     color: white;
+ }
+ ::-webkit-input-placeholder{
+     color:white;
+ }
+ .button-group{
+    display:flex;
+    color:white;
+    width: 13%;
+    justify-content: space-around;
+    align-items: flex-start;
+    
 }
-:-ms-input-placeholder {
+.plus, .info, .profile-pic, .bell, #sb, .boards{
+    border-radius: 5%;
+    height: 27px;
+    padding:0.5%;
+    background-color: rgba(120, 187, 228, 0.432);
+    display: flex;
+    align-items: center;
+    margin:3px;
+    
+}
+.plus, .info, .profile-pic, .bell{
+   
+    margin: none;
+    padding:5%;
+}
+.plus :hover{
+    background-color: rgba(94, 172, 221, 0.541);
+}
+ .info :hover {
+    background-color: rgba(94, 172, 221, 0.541);
+ }
+ .profile-pic :hover {
+    background-color: rgba(94, 172, 221, 0.541);
+ }
+ .bell :hover{
+    background-color: rgba(94, 172, 221, 0.541);
+ }
+  #sb :hover{
+    background-color: rgba(94, 172, 221, 0.541);
+  }
+   .boards :hover{
+    background-color: rgba(94, 172, 221, 0.541);
+
+   }
+    .logo :hover{
+        color:rgb(102, 145, 226);
+}
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color: rgba(203, 215, 236, 0.856);
+    
+   
+    font-family: 'Damion', cursive;
+    font-size: 27px;
+    height: 25px;
+  
+}
+.navbar-unregistered{
+    margin-top: 0%;
+    font-size: 1.2em;
+    padding:0.5%;
+    display:flex;
+    list-style: none;
+    background-color:rgb(2, 106, 167);
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.logo-unreg{
+   
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color:rgba(203, 215, 236, 0.856);
+    font-family: 'Damion', cursive;
+    font-size: 27px;
+    height: 25px;
+  
+}
+.login{
+    border: none;
+    border-radius: 5%;
+    height: 27px;
+    background-color: rgba(94, 172, 221, 0.774);
+    width:40% ;
     color: white;
 }
-::-webkit-input-placeholder{
-    color:white;
+.sign-up{
+    border: none;
+    border-radius: 5%;
+    height: 27px;
+    background-color: rgba(94, 221, 100, 0.774);
+    width:40% ;
+    color: white;
 }
+
+
 

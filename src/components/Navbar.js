@@ -8,14 +8,30 @@ return(
             <li className="boards"><a href="#"><i class="fab fa-trello"></i> Boards</a></li>
             <li className="search"> <input id="sb" type="text" name="search" placeholder="Buscar lol search..."/></li>
             <li className="logo"> <div><i class="fab fa-trello"></i>Trello</div></li>
-            <li class="button-group">
-            <li className="plus"> <i class="fas fa-plus"></i></li>
-            <li className="info"> <i class="fas fa-info-circle"></i></li>
-            <li className="bell"> <i class="far fa-bell"></i></li>
-            <li className="profile-pic"> <div ></div></li>
+            <li className="button-group">
+            <div className="plus"> <i className="fas fa-plus"></i></div>
+            <div className="info"> <i className="fas fa-info-circle"></i></div>
+            <div className="bell"> <i className="far fa-bell"></i></div>
+            <div className="profile-pic"> <div ></div></div>
                </li>    
                             
         </ul>
  ); }
 }
-export default Navbar;
+
+class Navbar_Unreg extends Component{
+    render(){
+return(
+        <ul className="navbar-unregistered">
+           
+            
+            <li className="logo-unreg"> <div><i class="fab fa-trello"></i>Trello</div></li>
+            <li className="button-group">
+            <button className="login">Login</button>
+            <button className="sign-up">Sign-Up</button>
+            </li>    
+                            
+        </ul>
+ ); }
+}
+export default Navbar_Unreg;
