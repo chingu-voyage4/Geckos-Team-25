@@ -1,7 +1,16 @@
 body{
     background-color: rgba(21, 78, 184, 0.705);
 }
-.navbar-registered{
-    background-color: rgba(21, 78, 184, 0.705);
-       
+.main-home{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    justify-content:center;
+    color: White;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+a{
+    text-decoration: none;
 }
