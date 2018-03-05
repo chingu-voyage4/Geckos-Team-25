@@ -18,4 +18,20 @@ return(
         </ul>
  ); }
 }
-export default Navbar;
+
+class Navbar_Unreg extends Component{
+    render(){
+return(
+        <ul className="navbar-unregistered">
+           
+            
+            <li className="logo-unreg"> <div><i class="fab fa-trello"></i>Trello</div></li>
+            <li className="button-group">
+            <button className="login">Login</button>
+            <button className="sign-up">Sign-Up</button>
+            </li>    
+                            
+        </ul>
+ ); }
+}
+export default Navbar_Unreg;

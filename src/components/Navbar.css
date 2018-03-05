@@ -94,7 +94,7 @@
     margin-right: auto;
     display: flex;
     align-items: center;
-    color:rgba(91, 127, 196, 0.938);
+    color: rgba(203, 215, 236, 0.856);
     
    
     font-family: 'Damion', cursive;
@@ -102,7 +102,43 @@
     height: 25px;
   
 }
-
+.navbar-unregistered{
+    margin-top: 0%;
+    font-size: 1.2em;
+    padding:0.5%;
+    display:flex;
+    list-style: none;
+    background-color:rgb(2, 106, 167);
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.logo-unreg{
+   
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    color:rgba(203, 215, 236, 0.856);
+    font-family: 'Damion', cursive;
+    font-size: 27px;
+    height: 25px;
+  
+}
+.login{
+    border: none;
+    border-radius: 5%;
+    height: 27px;
+    background-color: rgba(94, 172, 221, 0.774);
+    width:40% ;
+    color: white;
+}
+.sign-up{
+    border: none;
+    border-radius: 5%;
+    height: 27px;
+    background-color: rgba(94, 221, 100, 0.774);
+    width:40% ;
+    color: white;
+}
 
 
 
