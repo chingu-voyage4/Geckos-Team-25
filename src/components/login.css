@@ -1,0 +1,30 @@
+.login-form{ width: 40%;}
+.login-form div, .login-form button{ width:100%;
+  /*  margin:3%;*/
+
+}
+.login-form, .login-form div{
+    
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    text-align: left;
+    
+   
+  /*  padding: 3% 0 3% 0;*/
+
+}
+.login-form input, .login-form label {
+width:100%;
+border-radius: 5%;
+border: 0.5px solid gray;
+}
+
+ /*.login-form #email,.login-form #password,.login-form #name{
+    width: 100%;
+}
+.login-form input,.login-form label{
+    position: relative;
+    top:13%;
+}*/

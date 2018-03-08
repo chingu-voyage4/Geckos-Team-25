@@ -1,4 +1,6 @@
-body{
+.main-home-window{
+    height:100%;
+    width: 100%;
     background-color: rgba(21, 78, 184, 0.705);
 }
 .main-home{
