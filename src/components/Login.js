@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 import './fontawesome-all';
 import './login.css'
+
+
+
 class Login_Form extends Component{
     render(){
 return(
         <form className="login-form">
           <div>
-           <h1 id="login-form-header">Create a Trellogeck App  Account</h1>
-           <p> or <a href="#">or sign in to your account</a></p>
+           <h1 id="login-form-header">Login to Trellogeck App</h1>
+           <p> or <a href="#">sign-up for an account</a></p>
             </div>          
+           
+                           
            <div>
-           <label htmlFor="name">Name<br/><br/></label>
-           <input type="text" name="user_name" id="name" />
+           <label htmlFor="email">Email <br/></label>
+           <input type="email" name="user_email" id="email" placeholder="MaNameYo@sometechcompany.com" />
            </div>
-           <br/>    
+            
            <div>
-           <label htmlFor="email">Email<br/><br/></label>
-           <input type="email" name="user_email" id="email"  />
+           <label htmlFor="password">Password <br/></label>
+           <input type="password" name="user_password" id="password" min="6" placeholder="Please enter a password" />
            </div>
-           <br/>
+            
            <div>
-           <label htmlFor="password">Password<br/><br/></label>
-           <input type="password" name="user_password" id="password" min="6" />
+           <input class="submit-form" type="submit" value="Login" />  
            </div>
-           <br/>
+            
            <div>
-           <input class="submit-form" type="submit" value="Create New Account" /><br/><br/>
+           <button><i className="fab fa-google"></i>Login with Google</button>
            </div>
-           <br/>
-           <div>
-           <button><i className="fab fa-google"></i>  Sign up with Google</button>
-           </div>
-           <p> By creating an account or using our services you agree if anything breaks, its on you ;) </p>
+           <p> <a href="#">Forgot your Password?</a> </p>
         
         </form>
       
