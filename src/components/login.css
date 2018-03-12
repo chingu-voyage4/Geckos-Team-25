@@ -1,0 +1,52 @@
+@media (max-width:1200px){
+    .login-form{
+      width:45%;
+      margin:10% 23% 0 22%;
+    }
+  }
+  @media (max-width:800px) {
+    .login-form {
+      width: 90%;
+      margin:10% 5% 0 5%;
+    }
+  }
+  
+  
+  
+  
+  .login-form input{
+    width:100%;
+    margin:0% 0 10% 0;
+  }
+  
+  .login-form input[type=password] {
+    padding:5px;
+  box-sizing: border-box;
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  }
+  .login-form input[type=email]{
+    padding:5px;
+  box-sizing: border-box;
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  }
+  .login-form input[type=submit], .login-form button{
+    padding:5px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  background-color: rgba(15, 167, 53, 0.815);
+  width:100%;
+  
+  }
+  .login-form label{
+    display:flex;
+  }
+  .login-form button{
+    background-color: rgb(145, 119, 101);
+  }
+  
+  
+  
