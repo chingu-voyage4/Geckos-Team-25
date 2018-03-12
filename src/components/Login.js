@@ -3,6 +3,9 @@ import './fontawesome-all';
 import './login.css'
 
 
+import { Link } from "react-router-dom";
+import * as routes from "../constants";
+
 
 class Login_Form extends Component{
     render(){
@@ -10,7 +13,7 @@ return(
         <form className="login-form">
           <div>
            <h1 id="login-form-header">Login to Trellogeck App</h1>
-           <p> or <a href="#">sign-up for an account</a></p>
+           <p> or <Link to ={routes.SIGN_UP}> <a href="#">or sign in to your account</a></Link></p>
             </div>          
            
                            

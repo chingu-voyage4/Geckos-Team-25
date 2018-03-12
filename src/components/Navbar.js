@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import './fontawesome-all';
 import './Navbar.css';
+
+import { Link } from "react-router-dom";
+import * as routes from "../constants";
+
+
+
 class Navbar extends Component{
     render(){
 return(
@@ -25,7 +31,7 @@ return(
         <ul className="navbar-unregistered">
            
             
-            <li className="logo-unreg"> <div><i class="fab fa-trello"></i>Trello</div></li>
+            <li className="logo-unreg"><Link to={routes.HOME}> <div><i class="fab fa-trello"></i>Trello</div></Link></li>
             <li className="button-group">
             <button className="login">Login</button>
             <button className="sign-up">Sign-Up</button>

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import './fontawesome-all';
 import './signUp.css'
+
+import { Link } from "react-router-dom";
+import * as routes from "../constants";
 class SignUp_Form extends Component{
     render(){
 return(
         <form className="signUp-form">
           <div>
            <h1 id="signUp-form-header">Create a Trellogeck App  Account</h1>
-           <p> or <a href="#">or sign in to your account</a></p>
+           <p> or <Link to ={routes.SIGN_UP}> <a href="#">or sign in to your account</a></Link></p>
             </div>          
            <div>
            <label htmlFor="name">Name <br/></label>
