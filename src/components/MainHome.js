@@ -5,7 +5,7 @@ import './MainHome.css';
 import NavigationHome from "./Navigation-home";
 class MainHome extends Component{
     render(){
-return( <div class="main-home-window">            
+return( <div className="main-home-window">            
             <NavigationHome/>
         </div>
  ); }

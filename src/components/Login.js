@@ -13,7 +13,7 @@ return(
         <form className="login-form">
           <div>
            <h1 id="login-form-header">Login to Trellogeck App</h1>
-           <p> or <Link to ={routes.SIGN_UP}> <a href="#">or sign in to your account</a></Link></p>
+           <p> or  <Link to ={routes.SIGN_UP}>or sign up to your account</Link></p>
             </div>          
            
                            
@@ -28,7 +28,7 @@ return(
            </div>
             
            <div>
-           <input class="submit-form" type="submit" value="Login" />  
+           <input className="submit-form" type="submit" value="Login" />  
            </div>
             
            <div>
