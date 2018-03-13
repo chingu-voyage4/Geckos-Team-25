@@ -31,10 +31,10 @@ return(
         <ul className="navbar-unregistered">
            
             
-            <li className="logo-unreg"><Link to={routes.HOME}> <div><i className="fab fa-trello"></i>Trello</div></Link></li>
+            <li className="logo-unreg"><Link to={routes.HOME}> <div><i className="fab fa-trello"></i>Trello Geck</div></Link></li>
             <li className="button-group">
-            <button className="login">Login</button>
-            <button className="sign-up">Sign-Up</button>
+            <button className="login"><Link to={routes.SIGN_IN}> Login</Link></button>
+            <button className="sign-up"><Link to ={routes.SIGN_UP}> Sign-Up</Link></button>
             </li>    
                             
         </ul>

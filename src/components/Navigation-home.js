@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
+import logo from "../logo.svg";
 const NavigationHome = () =>(
+    <div>
+    <img src={logo} />
     <ul className="main-home">
     <li className="text1"><Link to={routes.HOME}><br/>Welcome back to Trello! </Link></li>
     <li className="text2"><Link to={routes.SIGN_IN}><br/>Login to Trello</Link></li>
@@ -10,6 +13,7 @@ const NavigationHome = () =>(
     <li className="text"><br/><a href="#"></a><Link to={routes.SIGN_IN}>Login with SSO</Link></li>  
                     
 </ul>
+</div>
 )
 
 export default NavigationHome;
