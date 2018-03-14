@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './fontawesome-all';
-import './MainHome.css';
+import "./fontawesome-all";
+import "./MainHome.css";
 import NavigationHome from "./Navigation-home";
-class MainHome extends Component{
-    render(){
-return( <div className="main-home-window">            
-            <NavigationHome/>
-        </div>
- ); }
+//import Sidebar from "./Sidebar";
+class MainHome extends Component {
+  render() {
+    return (
+      <div className="main-home-window">
+        <NavigationHome />
+      </div>
+    );
+  }
 }
 export default MainHome;
