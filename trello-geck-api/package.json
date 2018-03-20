@@ -1,0 +1,23 @@
+{
+  "name": "trellogeck-api",
+  "version": "1.0.0",
+  "description": "Trello Geck API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "geckos-team-25",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "~4.0.0",
+    "jsonwebtoken": "^8.1.1",
+    "mongodb": "^3.0.3",
+    "mongoose": "^4.2.6",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.15.1"
+  }
+}

@@ -3,41 +3,135 @@ import './fontawesome-all';
 import './login.css'
 
 
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import * as routes from "../constants";
-
+import validator from "validator";//form valitation
+import axios from "axios";//handling requests/promise based HTTP client
+import { 
+        Button, 
+        Form, 
+        FormControl, 
+        FormGroup, 
+        Col,
+        Grid,
+        Row,
+        Well,
+        ControlLabel,
+        Glyphicon,
+        Alert
+     } from "react-bootstrap";
 
 class Login_Form extends Component{
+
+    constructor(props){
+        //override
+        super(props);
+        //initial state
+        this.state = {
+            data:{
+                email:'',
+                password:''
+            }, 
+            errors:{},
+            loading:false
+        }
+
+    }
+
+    /**
+     * Handling changes on inputs
+     */
+    onChange = e => {
+            this.setState({data:{...this.state.data, [e.target.name]:e.target.value}});
+    }
+
+    /**
+     * Handler submit event
+     */
+    onSubmit = (e) =>{
+
+        e.preventDefault();
+        const state = this.state.data;
+        const errors = this.validateData(this.state.data);//form validation
+        this.setState({errors:errors});//set state with any errors from form validation
+
+        //check if no errors
+        if(Object.keys(errors).length === 0){           
+            this.setState({loading:true});//set state of loading property to true
+            axios.post('/api/user/login', state)
+            .then(res => {            
+                this.props.history.push(routes.DASHBOARD);//Routing to dashboard pages
+            })
+            .catch(error => {
+                //update state with errors from server
+               
+                this.setState({errors:error.response.data.errors, loading:false});
+            });
+        }    
+    }
+
+    /**
+     * Form validations
+     */
+    validateData = data => {
+
+        const errors = {};
+        if(!validator.isEmail(data.email)) errors.email = "Invalid Email";    
+        if(!data.password) errors.password = "Complete the password field";
+        return errors;
+    }
+
+    /**
+     * Render view
+     */
     render(){
-return(
-        <form className="login-form">
-          <div>
-           <h1 id="login-form-header">Login to Trellogeck App</h1>
-           <p> or  <Link to ={routes.SIGN_UP}>or sign up to your account</Link></p>
-            </div>          
-           
-                           
-           <div>
-           <label htmlFor="email">Email <br/></label>
-           <input type="email" name="user_email" id="email" placeholder="MaNameYo@sometechcompany.com" />
-           </div>
-            
-           <div>
-           <label htmlFor="password">Password <br/></label>
-           <input type="password" name="user_password" id="password" min="6" placeholder="Please enter a password" />
-           </div>
-            
-           <div>
-           <input className="submit-form" type="submit" value="Login" />  
-           </div>
-            
-           <div>
-           <button><i className="fab fa-google"></i>Login with Google</button>
-           </div>
-           <p> <a href="#">Forgot your Password?</a> </p>
-        
-        </form>
-      
- ); }
+            const {errors, data, loading} = this.state;
+         
+            return( 
+                <Well>
+                <Grid>
+                    <Row className="show-grid" >     
+                    <Col sm={6} md={12}>         
+                <Form horizontal onSubmit={this.onSubmit}>
+                {errors.authErrors && <Alert bsStyle="danger">
+                    <h4>Oh, You Got an Error</h4>
+                    <p>{errors.authErrors.message}</p>
+                </Alert>}
+                <Well>
+                    <h1 id="login-form-header">Login to Trellogeck App</h1>
+                    <p> or  <Link to ={routes.SIGN_UP}>Sign up to your account</Link></p>
+                 </Well>   
+                <FormGroup controlId="loginForm" validationState={errors.email ? "error" : null}>
+                  <Col  sm={2}>
+                    Email
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl onChange={this.onChange} type="email" name="email" placeholder="Email" />
+                    <ControlLabel>{errors.email}</ControlLabel>                   
+                  </Col>
+                </FormGroup>
+              
+                <FormGroup controlId="password" validationState={errors.password ? "error" : null}>
+                  <Col sm={2}>
+                    Password
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl onChange={this.onChange} type="password" name="password"  placeholder="Password" />
+                    <ControlLabel>{errors.password}</ControlLabel>
+                  </Col>
+                </FormGroup>        
+                <FormGroup>
+                  <Col smOffset={2} sm={10}>
+                    <Button type="submit">Login</Button>
+                  </Col>
+                </FormGroup>
+              </Form>
+              </Col>
+              </Row>
+              </Grid>
+              </Well>
+            ); 
+    }
 }
-export default Login_Form;
+
+export default withRouter(Login_Form);

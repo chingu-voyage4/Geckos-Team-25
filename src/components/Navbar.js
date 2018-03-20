@@ -4,6 +4,7 @@ import "./Navbar.css";
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
+import { Button } from "react-bootstrap";
 
 class Navbar extends Component {
   render() {
@@ -60,7 +61,7 @@ class Navbar_Unreg extends Component {
           <Link to={routes.HOME}>
             {" "}
             <div>
-              <i className="fab fa-trello" />Trello Geck
+              <Button>Trello Geck</Button>
             </div>
           </Link>
         </li>
@@ -70,17 +71,19 @@ class Navbar_Unreg extends Component {
             id="sb"
             type="text"
             name="search"
-            placeholder="Buscar lol search..."
+            placeholder="Search..."
           />
         </li>
-        <li className="button-group">
-          <button className="login">
-            <Link to={routes.SIGN_IN}> Login</Link>
-          </button>
-          <button className="sign-up">
-            <Link to={routes.SIGN_UP}> Sign-Up</Link>
-          </button>
-        </li>
+        <Button>
+        <Link to={routes.SIGN_IN}>
+          Login
+        </Link>   
+        </Button>   
+        <Button >  
+        <Link to={routes.SIGN_UP}>
+          Sign-Up
+        </Link>     
+        </Button>
       </ul>
     );
   }

@@ -9,8 +9,7 @@ class MainHome extends Component {
   render() {
     return (
       <div className="main-home-window">
-        <NavigationHome />
-        <Sidebar />
+        <NavigationHome />        
       </div>
     );
   }

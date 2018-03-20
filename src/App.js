@@ -5,6 +5,7 @@ import  Navbar from './components/Navbar';
 import MainHome from './components/MainHome';
 import SignUp_Form from './components/signUp';
 import Login_Form from './components/Login';
+import Dashboard from './components/Dashboard';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as routes from "./constants";
@@ -26,7 +27,12 @@ class App extends Component {
             <Route
               exact path={routes.SIGN_UP}
                 component = { () => <SignUp_Form />}
-            />       
+            />    
+
+             <Route
+              exact path={routes.DASHBOARD}
+                component = { () => <Dashboard />}
+            />    
         </div>
       </Router> 
     );
