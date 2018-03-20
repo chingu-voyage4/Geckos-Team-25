@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postinstall": "cd trello-geck-api && npm install"
+    "postinstall": "npm install --prefix trello-geck-api"
   },
   "proxy": "http://localhost:3001"
 }
