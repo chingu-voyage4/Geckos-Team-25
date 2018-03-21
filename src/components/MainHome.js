@@ -8,7 +8,7 @@ import Sidebar from "./Sidebar";
 class MainHome extends Component {
   render() {
     return (
-      <div className="main-home-window">
+      <div className="main-home-window">        
         <NavigationHome />        
       </div>
     );

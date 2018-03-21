@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-
-//import Sidebar from "./Sidebar";
+import{Navbar} from "./Navbar";
 class Dashaboard extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div>

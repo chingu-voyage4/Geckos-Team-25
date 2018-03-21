@@ -7,6 +7,9 @@ import { Link, withRouter } from "react-router-dom";
 import * as routes from "../constants";
 import validator from "validator";//form valitation
 import axios from "axios";//handling requests/promise based HTTP client
+import  Navbar_Unreg from './Navbar';
+
+
 import { 
         Button, 
         Form, 
@@ -33,7 +36,8 @@ class Login_Form extends Component{
                 password:''
             }, 
             errors:{},
-            loading:false
+            loading:false,
+            isLoggedIn:false
         }
 
     }
@@ -59,7 +63,8 @@ class Login_Form extends Component{
         if(Object.keys(errors).length === 0){           
             this.setState({loading:true});//set state of loading property to true
             axios.post('/api/user/login', state)
-            .then(res => {            
+            .then(res => {  
+                this.setState({isLoggedIn:true});          
                 this.props.history.push(routes.DASHBOARD);//Routing to dashboard pages
             })
             .catch(error => {
@@ -68,6 +73,10 @@ class Login_Form extends Component{
                 this.setState({errors:error.response.data.errors, loading:false});
             });
         }    
+    }
+
+    isLoggedIn=() =>{
+        return this.state.isLoggedIn;
     }
 
     /**
@@ -88,6 +97,7 @@ class Login_Form extends Component{
             const {errors, data, loading} = this.state;
          
             return( 
+                
                 <Well>
                 <Grid>
                     <Row className="show-grid" >     
@@ -130,6 +140,7 @@ class Login_Form extends Component{
               </Row>
               </Grid>
               </Well>
+            
             ); 
     }
 }
