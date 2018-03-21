@@ -50,7 +50,7 @@ class SignUp_Form extends Component{
             console.log(res);
         })
         .catch(error => {
-            this.setState({errors:error.response.data.errors})
+            this.setState({errors:error.response.data.errors.errors})
         })
 
     }
@@ -75,7 +75,7 @@ class SignUp_Form extends Component{
                     <p> or  <Link to ={routes.SIGN_IN}>Sign In to your account</Link></p>
                  </Well>   
                  <FormGroup controlId="logSinForm" validationState={errors.username ? "error" : null}>
-                 {errors.email && <Alert bsStyle="danger">
+                 {errors.username && <Alert bsStyle="danger">
                     <h4>Oh, You Got an Error</h4>
                    {Object.keys(errors).map((key) => 
                         <p key={key}>{errors[key].message}</p>                                 
