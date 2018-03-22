@@ -1,0 +1,21 @@
+.display-boards{
+    margin:5%;
+}
+
+.display-boards .personal-boards{ 
+    display:flex;
+   /* margin: 5%;*/
+}
+.display-boards .personal-boards .regular-board{
+  
+    background: blue;
+    color:white;
+    margin:10px;
+    margin-left:0px;
+    height: 100px;
+    width:230px;
+    padding:7px;
+    font-weight: bold;
+    background-color: rgb(2, 106, 167);
+    border-radius: 5px;
+}
