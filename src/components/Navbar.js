@@ -59,22 +59,22 @@ import { Button } from "react-bootstrap";
 //**************************** *** *** ** ** ************************************************************** */
 /************************** ****************** **  ** ****************************************************** */
 /************************** ************************** ************************************************** */
-class Board_button extends React.Component++ {
+class Board_button extends React.Component {
   render(){
     return (
-  <div>
+  <div className="board_button" >
  <input type="search" id="board-button-search" placeholder="Find boards by name..."/>
- <div className="recent-boards">
+ <div className=" flexy recent-boards">
    <div>
 
    </div>
  </div>
- <div className="personal-boards">
+ <div className=" flexy personal-boards">
    <div>
      
    </div>
  </div>
- <div>
+ <div className="flexy links">
    <a href="#" >Create new board...</a>
    <a href="#" >Always keep this menu open</a>
    <a href="#" >See closed boards...</a>

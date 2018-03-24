@@ -1,3 +1,13 @@
+/*div,ul,li,html,body,input{
+  margin:0;
+  padding: 0;
+  border:0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  
+}*/
+
 .navbar-registered {
   margin-top: 0%;
   font-size: 1.2em;
@@ -8,26 +18,57 @@
   flex-wrap: nowrap;
   align-items: center;
 }
-.navbar-registered li {
+.navbar-registered > li {
   flex: 0 0 auto;
 }
-.boards {
+.navbar-registered .boards {
   padding: 1%;
   font-size: 20px;
   background-color: rgba(120, 186, 228, 0.432);
   border-radius: 5%;
 }
-.boards a {
+.navbar-registered .boards > a {
   height: auto;
   width: auto;
   color: white;
   text-decoration: none;
 }
-#sb {
+
+.navbar-registered .boards .board_button{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  width: 250px;
+  position: absolute;
+  top:33px;
+  left:2px;
+  border: 0.5px solid rgba(180, 174, 174, 0.39);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  box-shadow: 5px 5px 5px gray;
+}
+.navbar-registered .flexy{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: inherit;
+}
+.navbar-registered #sb {
   border: none;
   font-family: Arial, Helvetica, sans-serif;
   outline: none;
   color: white;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  width: 150px;
+}
+
+.navbar-registered #sb:focus {
+  background-color: white;
+  color: black;
+  width: 300px;
 }
 :-ms-input-placeholder {
   color: white;
@@ -35,57 +76,55 @@
 ::-webkit-input-placeholder {
   color: white;
 }
-.button-group {
+.navbar-registered .button-group {
   display: flex;
   color: white;
   width: 13%;
   justify-content: space-around;
   align-items: flex-start;
 }
-.plus,
-.info,
-.profile-pic,
-.bell,
-#sb,
-.boards {
-  border-radius: 5%;
+.navbar-registered .plus,
+.navbar-registered .info,
+.navbar-registered .profile-pic, 
+.navbar-registered .bell, 
+.navbar-registered #sb,
+.navbar-registered .boards {
+  border-radius: 3px;
   height: 27px;
   padding: 0.5%;
   background-color: rgba(120, 187, 228, 0.432);
-  display: flex;
-  align-items: center;
-  margin: 3px;
+  margin:3px;
 }
-.plus,
-.info,
-.profile-pic,
-.bell {
+.navbar-registered .plus,
+.navbar-registered .info,
+.navbar-registered .profile-pic,
+.navbar-registered .bell {
   margin: none;
   padding: 5%;
 }
-.plus :hover {
+.navbar-registered .plus :hover {
+  background: rgba(94, 172, 221, 0.541);
+}
+.navbar-registered .info :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-.info :hover {
+.navbar-registered .profile-pic :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-.profile-pic :hover {
+.navbar-registered .bell :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-.bell :hover {
+.navbar-registered #sb :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-#sb :hover {
+.navbar-registered .boards :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-.boards :hover {
-  background-color: rgba(94, 172, 221, 0.541);
-}
-.logo :hover {
+.navbar-registered .logo :hover {
   color: rgb(102, 145, 226);
 }
 
-.logo {
+.navbar-registered .logo {
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -96,6 +135,8 @@
   font-size: 27px;
   height: 25px;
 }
+
+
 .navbar-unregistered {
   margin-top: 0%;
   font-size: 1.2em;
@@ -106,7 +147,7 @@
   flex-wrap: nowrap;
   align-items: center;
 }
-.logo-unreg {
+.navbar-unregistered .logo-unreg {
   margin-right: auto;
   display: flex;
   align-items: center;
@@ -115,7 +156,7 @@
   font-size: 27px;
   height: 25px;
 }
-.login {
+.navbar-unregistered .login {
   border: none;
   border-radius: 5%;
   height: 27px;
@@ -123,7 +164,7 @@
   width: 40%;
   color: white;
 }
-.sign-up {
+.navbar-unregistered .sign-up {
   border: none;
   border-radius: 5%;
   height: 27px;
@@ -131,7 +172,7 @@
   width: 40%;
   color: white;
 }
-.search {
+.navbar-unregistered .search {
   display: flex;
   margin-right: auto;
   margin-left: 10px;
@@ -140,15 +181,4 @@
   align-items: left;
 }
 
-#sb {
-  align-items: left;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  width: 300px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-}
-#sb:focus {
-  background-color: white;
-  color: black;
-  width: 600px;
-}
+
