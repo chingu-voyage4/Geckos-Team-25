@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './fontawesome-all';
-import './signUp.css'
+import './SignUp.css'
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  Navbar from './components/Navbar';
+import  {Navbar, Navbar_Unreg} from './components/Navbar';
 import MainHome from './components/MainHome';
-import SignUp_Form from './components/signUp';
+import SignUp_Form from './components/SignUp';
 import Login_Form from './components/Login';
 import Dashboard from './components/Dashboard';
+import {Boards} from './components/Boards';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as routes from "./constants";
@@ -15,11 +16,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">  
-          <Navbar />   
-            <Route
+          <Navbar /> 
+          <Boards />  
+           {/* <Route
               exact path={routes.HOME}
                 component = { () => <MainHome />}
-            />
+            />*/}
+            <Route
+              exact path={routes.BOARDS}
+                component = { () => <Boards />}           
+             />
             <Route
               exact path={routes.SIGN_IN}
                 component = { () => <Login_Form />}
@@ -29,7 +35,7 @@ class App extends Component {
                 component = { () => <SignUp_Form />}
             />    
 
-             <Route
+            <Route
               exact path={routes.DASHBOARD}
                 component = { () => <Dashboard />}
             />    

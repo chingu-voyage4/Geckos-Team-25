@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './boards.css'
+import './Boards.css'
 
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
 
 
-// Really should have come up with a better name but this is the main page displaying the diffrent Boards t
+// Really should have come up with a better name but this is the main page displaying the diffrent Boards 
 // to go into the diffrent sub boards
-class Boards extends Component{
+export class Boards extends Component{
    constructor(props){
     super(props);
 // A placeholder that should remain just to work as filler
@@ -23,9 +23,10 @@ class Boards extends Component{
 
         return(
             <div className="display-boards">
-            <div> <i className="far fa-user"></i><strong>Personal Boards</strong></div>
+            <div> <i className="far fa-user"></i><strong id="personal-boards-heading">Personal Boards</strong></div>
                 <div className="personal-boards">
                     {this.displayBoards()}
+                    {this.createBoards()}
 
                 </div>
             </div>
@@ -42,12 +43,19 @@ class Boards extends Component{
         );
     }
 
-    /*createBoards(event){
+    createBoards(event){
         // when this Element is created a new div componet is rendered 
+
+
+        return (
+                <div id="create-modal">
+                    <p>Create new board</p>
+                </div> 
+        );
         
-    }*/
+    }
 }
 
-export default Boards;
+
 
  
