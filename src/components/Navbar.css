@@ -35,9 +35,12 @@
 }
 
 .navbar-registered .boards .board_button{
-  display:flex;
+  display:none;
+  font-size: 12px;
+  padding:0.1%;
   flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   height: 400px;
   width: 250px;
@@ -49,11 +52,22 @@
   color: rgb(0, 0, 0);
   box-shadow: 5px 5px 5px gray;
 }
+.navbar-registered .board-button-search{
+  border: none;
+}
+/*.navbar-registered .board-button-content{
+  display:none;
+}*/
+.navbar-registered .boards:hover .board-button-content  .board_button, .board_button:hover{ 
+    display:flex;
+}
 .navbar-registered .flexy{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   color: inherit;
+  align-items: flex-start;
+  
 }
 .navbar-registered #sb {
   border: none;
@@ -117,7 +131,7 @@
 .navbar-registered #sb :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
-.navbar-registered .boards :hover {
+.navbar-registered .board-button :hover {
   background-color: rgba(94, 172, 221, 0.541);
 }
 .navbar-registered .logo :hover {
@@ -172,7 +186,7 @@
   width: 40%;
   color: white;
 }
-.navbar-unregistered .search {
+.navbar-registered .search {
   display: flex;
   margin-right: auto;
   margin-left: 10px;

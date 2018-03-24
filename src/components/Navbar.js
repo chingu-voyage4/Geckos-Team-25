@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./fontawesome-all";
 import "./Navbar.css";
-
+import {Boards} from "./Boards";
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
 import { Button } from "react-bootstrap";
@@ -65,11 +65,14 @@ class Board_button extends React.Component {
   <div className="board_button" >
  <input type="search" id="board-button-search" placeholder="Find boards by name..."/>
  <div className=" flexy recent-boards">
-   <div>
-
+ Personal Boards
+   <div className="flexy " >
+    
+   {/* {Boards.displayBoards()} */}
    </div>
  </div>
- <div className=" flexy personal-boards">
+ <div className=" flexy ">
+   Team Boards
    <div>
      
    </div>
@@ -89,7 +92,8 @@ export class Navbar extends Component{
   render(){
 return(
       <ul className="navbar-registered">
-          <li className="boards"><a href="#"><i className="fab fa-trello"></i> Boards</a>
+          <li className="boards">
+                <a className="board-button" href="#"><i className="fab fa-trello"></i> Boards</a>
                 <div className="board-button-content">
                    <Board_button/>
                 </div>
