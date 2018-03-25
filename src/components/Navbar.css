@@ -7,7 +7,9 @@
   vertical-align: baseline;
   
 }*/
-
+hr{
+  color: aqua;
+}
 .navbar-registered {
   margin-top: 0%;
   font-size: 1.2em;
@@ -19,10 +21,10 @@
   align-items: center;
 }
 .navbar-registered > li {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 .navbar-registered .boards {
-  padding: 1%;
+  padding: 0.1%;
   font-size: 20px;
   background-color: rgba(120, 186, 228, 0.432);
   border-radius: 5%;
@@ -61,12 +63,34 @@
 .navbar-registered .boards:hover .board-button-content  .board_button, .board_button:hover{ 
     display:flex;
 }
+.navbar-registered .search-modal{
+  display:none;
+  font-size: 12px;
+  padding:0.1%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: rgb(240, 232, 232);
+  height: 300px;
+  width: 450px;
+  position: absolute;
+  top:33px;
+  left:156px;
+  border: 0.5px solid rgba(180, 174, 174, 0.39);
+  border-radius: 5px;
+  color: rgb(71, 67, 67);
+  box-shadow: 5px 5px 5px gray;
+}
+.navbar-registered .search:hover .search-modal {
+  display:flex;
+}
 .navbar-registered .flexy{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   color: inherit;
   align-items: flex-start;
+  justify-content: stretch;
   
 }
 .navbar-registered #sb {
@@ -76,13 +100,13 @@
   color: white;
   -webkit-transition: 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  width: 150px;
+  width: 130px;
 }
 
 .navbar-registered #sb:focus {
   background-color: white;
   color: black;
-  width: 300px;
+  width: 240px;
 }
 :-ms-input-placeholder {
   color: white;
@@ -93,7 +117,7 @@
 .navbar-registered .button-group {
   display: flex;
   color: white;
-  width: 13%;
+  width: auto;
   justify-content: space-around;
   align-items: flex-start;
 }
@@ -105,8 +129,8 @@
 .navbar-registered .boards {
   border-radius: 3px;
   height: 27px;
-  padding: 0.5%;
-  background-color: rgba(120, 187, 228, 0.432);
+  /*padding: 0.5%;*/
+  background-color: rgba(90, 178, 233, 0.692);
   margin:3px;
 }
 .navbar-registered .plus,
@@ -114,42 +138,61 @@
 .navbar-registered .profile-pic,
 .navbar-registered .bell {
   margin: none;
-  padding: 5%;
+  width:25px;
 }
 .navbar-registered .plus :hover {
-  background: rgba(94, 172, 221, 0.541);
+  background-color: rgb(70, 127, 163);
 }
 .navbar-registered .info :hover {
-  background-color: rgba(94, 172, 221, 0.541);
+  background-color: rgb(71, 126, 160);
 }
 .navbar-registered .profile-pic :hover {
-  background-color: rgba(94, 172, 221, 0.541);
+  background-color: rgb(70, 128, 165);
 }
 .navbar-registered .bell :hover {
-  background-color: rgba(94, 172, 221, 0.541);
+  background-color: rgb(70, 131, 168);
 }
 .navbar-registered #sb :hover {
-  background-color: rgba(94, 172, 221, 0.541);
+  background-color: rgb(83, 172, 228);
 }
 .navbar-registered .board-button :hover {
-  background-color: rgba(94, 172, 221, 0.541);
+  background-color: rgb(71, 136, 177);
 }
 .navbar-registered .logo :hover {
-  color: rgb(102, 145, 226);
+  color: rgb(71, 110, 182);
 }
 
 .navbar-registered .logo {
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   color: rgba(203, 215, 236, 0.856);
-
   font-family: "Damion", cursive;
-  font-size: 27px;
+  font-size: 23px;
   height: 25px;
 }
+ 
+.navbar-registered .plus-popup{
+  display:flex;
+  font-size: 12px;
+  padding:0.1%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+  height: 320px;
+  width: 250px;
+  position: absolute;
+  top:33px;
+  right:3px;
+  border: 0.5px solid rgba(180, 174, 174, 0.39);
+  border-radius: 5px;
+  color: rgb(71, 67, 67);
+  box-shadow: 5px 5px 5px gray;
 
+}
 
 .navbar-unregistered {
   margin-top: 0%;
@@ -186,7 +229,7 @@
   width: 40%;
   color: white;
 }
-.navbar-registered .search {
+/*.navbar-registered .search {
   display: flex;
   margin-right: auto;
   margin-left: 10px;
@@ -194,5 +237,5 @@
   width: 600px;
   align-items: left;
 }
-
+*/
 
