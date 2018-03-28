@@ -49,8 +49,7 @@ const NavbarAuth = () => (
   
 
 
-// this commented component above is the edited Navbar from our team 
-// leader. The Navbar below will be used to navigate in the app
+
 
 //**************************** *** *** ** ** ************************************************************** */
 /************************** ****************** **  ** ****************************************************** */
@@ -148,10 +147,10 @@ render(){
 }
 
 
-class Navbar extends Component{
+/*class Navbar extends Component{
   render(){
  }
-}
+}*/
 
 
 
