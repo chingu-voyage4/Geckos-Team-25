@@ -4,77 +4,128 @@ import './SignUp.css'
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
+import axios from "axios";
+
+import { 
+    Button, 
+    Form, 
+    FormControl, 
+    FormGroup, 
+    Col,
+    Grid,
+    Row,
+    Well,
+    ControlLabel,
+    Glyphicon,
+    Alert
+ } from "react-bootstrap";
+
 class SignUp_Form extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data:{
+                username:'',
+                email:'',
+                password:''
+
+            },
+            loading:false,            
+            errors:{},
+            saved:false
+        }
+    }
+
+    onChange = e => {
+        this.setState({data:{...this.state.data,[e.target.name]:e.target.value}});
+    }
+
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        const state = this.state.data;
+        axios.post('api/user/register/',state)
+        .then(res => {
+            this.setState({saved:true});
+            console.log(res);
+        })
+        .catch(error => {
+            this.setState({errors:error.response.data.errors.errors})
+        })
+
+    }
+
+
     render(){
-return(
-        <form className="signUp-form">
-          <div>
-           <h1 id="signUp-form-header">Create a Trellogeck App  Account</h1>
-           <p> or  <a href="#"></a><Link to ={routes.SIGN_IN}>or sign in to your account</Link></p>
-            </div>          
-           <div>
-           <label htmlFor="name">Name <br/></label>
-           <input type="text" name="user_name" id="name" placeholder="MaNameYo"/>
-           </div>
-                
-           <div>
-           <label htmlFor="email">Email <br/></label>
-           <input type="email" name="user_email" id="email" placeholder="MaNameYo@sometechcompany.com" />
-           </div>
-            
-           <div>
-           <label htmlFor="password">Password <br/></label>
-           <input type="password" name="user_password" id="password" min="6" placeholder="Please enter a password" />
-           </div>
-            
-           <div>
-           <input className="submit-form" type="submit" value="Create New Account" />  
-           </div>
-            
-           <div>
-           <button><i className="fab fa-google"></i>  Sign up with Google</button>
-           </div>
-           <p> By creating an account or using our services you agree if anything breaks, its on you ;) </p>
+
+    const {errors, data, loading, saved} = this.state;
         
-        </form>
+            return( 
+               
+              <div>
+                <Well>
+                    
+                <Grid>
+                    <Row className="show-grid" >     
+                    <Col sm={6} md={12}>         
+                <Form horizontal onSubmit={this.onSubmit}>
+              
+                <Well>
+                    <h1 id="login-form-header">Sign Up to Trellogeck App</h1>
+                    <p> or  <Link to ={routes.SIGN_IN}>Sign In to your account</Link></p>
+                 </Well>   
+                 <FormGroup controlId="logSinForm" validationState={errors.username ? "error" : null}>
+                 {errors.username && <Alert bsStyle="danger">
+                    <h4>Oh, You Got an Error</h4>
+                   {Object.keys(errors).map((key) => 
+                        <p key={key}>{errors[key].message}</p>                                 
+                    ) }
+                 </Alert> }
+                {saved &&  <Alert bsStyle="success">
+                    <h4>Oh, Great your Data Was Saved!</h4>                  
+                </Alert> }
+                  <Col  sm={2}>
+                    Username
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl onChange={this.onChange} type="text" name="username" placeholder="username" />
+                                   
+                  </Col>
+                </FormGroup>
+                <FormGroup controlId="loginForm" validationState={errors.email ? "error" : null}>
+                  <Col  sm={2}>
+                    Email
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl onChange={this.onChange} type="email" name="email" placeholder="Email" />
+                                   
+                  </Col>
+                </FormGroup>
+              
+                <FormGroup controlId="password">
+                  <Col sm={2}>
+                    Password
+                  </Col>
+                  <Col sm={10}>
+                    <FormControl onChange={this.onChange} type="password" name="password"  placeholder="Password" />
+                  
+                  </Col>
+                </FormGroup>        
+                <FormGroup>
+                  <Col smOffset={2} sm={10}>
+                    <Button type="submit">Sign Up</Button>
+                  </Col>
+                </FormGroup>
+              </Form>
+              </Col>
+              </Row>
+              </Grid>
+              </Well> 
+              </div>
+                   
       
  ); }
 }
 
-class Login_Form extends Component{
-    render(){
-return(
-        <form className="signUp-form">
-          <div>
-           <h1 id="signUp-form-header">Create a Trellogeck App  Account</h1>
-           <p> or <a href="#">or sign in to your account</a></p>
-            </div>          
-           <div>
-           <label htmlFor="name">Name <br/></label>
-           <input type="text" name="user_name" id="name" placeholder="MaNameYo"/>
-           </div>
-                
-           <div>
-           <label htmlFor="email">Email <br/></label>
-           <input type="email" name="user_email" id="email" placeholder="MaNameYo@sometechcompany.com" />
-           </div>
-            
-           <div>
-           <label htmlFor="password">Password <br/></label>
-           <input type="password" name="user_password" id="password" min="6" placeholder="Please enter a password" />
-           </div>
-            
-           <div>
-           <input class="submit-form" type="submit" value="Create New Account" />  
-           </div>
-            
-           <div>
-           <button><i className="fab fa-google"></i>  Sign up with Google</button>
-           </div>
-           <p> By creating an account or using our services you agree if anything breaks, its on you ;) </p>
-        
-        </form>
-      
- ); }
-}
+
 export default SignUp_Form;

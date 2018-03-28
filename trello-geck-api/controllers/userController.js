@@ -52,7 +52,7 @@ users.saveUser = (req, res) =>{
         .save()
         .then(user =>{
             res.json({ token:userModel.toAuthJSON(user)});})
-        .catch(error => res.status(400).json(error)) ;      
+        .catch(error => res.status(400).json({errors:error})) ;      
 }
 
 
