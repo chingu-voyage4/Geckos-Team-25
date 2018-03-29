@@ -5,13 +5,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
+    "concurrently": "^3.5.1",
+    "mongoose": "^5.0.12",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "validator": "^9.4.1",
-    "concurrently": "^3.5.1"
+    "validator": "^9.4.1"
   },
   "scripts": {
     "server": "node trello-geck-api/server.js",
