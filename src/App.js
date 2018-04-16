@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  Navbar from './components/Navbar';
+
 
 import MainHome from './components/MainHome';
-import SignUp_Form from './components/SignUp';
+import SignUp_Form from './components/signUp';
 import Login_Form from './components/Login';
 import Dashboard from './components/Dashboard';
 import {Boards} from './components/Boards';
@@ -17,25 +17,25 @@ class App extends Component {
    constructor(props){
      super(props);
      this.state = {
-       isLoggedIn :false
+       isLoggedIn :true
      }
 
     
   }
 
   componentDidMount  () {
-    
-    console.log(this.refs);
+    //check if is logged in-
+        console.log(Login_Form);
   }
   render() {
     return (
       <Router>
         <div className="App">
-        <Navbar isLoggedIn={this.state.isLoggedIn}  />     
+            
             <Route
               exact path={routes.HOME}
                 component = { () => <MainHome />}
-            />*/}
+            />
             <Route
               exact path={routes.BOARDS}
                 component = { () => <Boards />}           

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Boards.css'
+import './boards.css'
 
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
+import SignUp from './signUp';
 
 
 // Really should have come up with a better name but this is the main page displaying the diffrent Boards 
@@ -55,6 +56,7 @@ export class Boards extends Component{
         
     }
 }
+
 
 
 

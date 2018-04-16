@@ -15,7 +15,7 @@ const Navbar = ({isLoggedIn})=>(
   </div>
 )
 
-const NavbarAuth = () => (
+export const NavbarAuth = () => (
   
     <ul className="navbar-registered">
         <li className="boards">
@@ -24,7 +24,7 @@ const NavbarAuth = () => (
                  <Board_button/>
               </div>
         </li>
-        <li className="search"> <input id="sb" type="text" name="search" placeholder="Buscar lol search..."/>
+        <li className="search"> <input id="sb" type="text" name="search" placeholder="Search..."/>
               <Search_modal/>
         
         </li>

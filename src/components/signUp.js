@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './fontawesome-all';
-import './SignUp.css'
+import './signUp.css'
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
@@ -32,6 +32,7 @@ class SignUp_Form extends Component{
             },
             loading:false,            
             errors:{},
+            serverErrors:{},
             saved:false
         }
     }
@@ -46,11 +47,10 @@ class SignUp_Form extends Component{
         const state = this.state.data;
         axios.post('api/user/register/',state)
         .then(res => {
-            this.setState({saved:true});
-            console.log(res);
+            this.setState({saved:true});            
         })
         .catch(error => {
-            this.setState({errors:error.response.data.errors.errors})
+            this.setState({errors:error.response.data.errors})
         })
 
     }
@@ -59,7 +59,7 @@ class SignUp_Form extends Component{
     render(){
 
     const {errors, data, loading, saved} = this.state;
-        
+        //console.log(errors);
             return( 
                
               <div>
@@ -74,12 +74,11 @@ class SignUp_Form extends Component{
                     <h1 id="login-form-header">Sign Up to Trellogeck App</h1>
                     <p> or  <Link to ={routes.SIGN_IN}>Sign In to your account</Link></p>
                  </Well>   
-                 <FormGroup controlId="logSinForm" validationState={errors.username ? "error" : null}>
-                 {errors.username && <Alert bsStyle="danger">
+                 <FormGroup controlId="logSinForm">
+                 {Object.keys(errors).length > 0 && <Alert bsStyle="danger">
                     <h4>Oh, You Got an Error</h4>
-                   {Object.keys(errors).map((key) => 
-                        <p key={key}>{errors[key].message}</p>                                 
-                    ) }
+                   { errors.code && "Error Code:" + errors.code + ": E11000 duplicate key error index" }
+                   { errors.errors && "Fields are Required"  }
                  </Alert> }
                 {saved &&  <Alert bsStyle="success">
                     <h4>Oh, Great your Data Was Saved!</h4>                  
@@ -92,7 +91,7 @@ class SignUp_Form extends Component{
                                    
                   </Col>
                 </FormGroup>
-                <FormGroup controlId="loginForm" validationState={errors.email ? "error" : null}>
+                <FormGroup controlId="loginForm">
                   <Col  sm={2}>
                     Email
                   </Col>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import{Navbar} from "./Navbar";
+import{NavbarAuth} from "./Navbar";
+import {Boards} from "./Boards.js";
+
 class Dashaboard extends Component {
   constructor(props){
     super(props);
@@ -7,7 +9,9 @@ class Dashaboard extends Component {
   render() {
     return (
       <div>
+        <NavbarAuth/>
        <h1>This the Dashaboard</h1>      
+       <Boards/>
       </div>
     );
   }

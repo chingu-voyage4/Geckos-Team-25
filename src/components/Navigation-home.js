@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
+import  Navbar from './Navbar';
 import logo from "../logo.svg";
 
 import { Jumbotron, Button } from "react-bootstrap";
 const NavigationHome = () =>(
     <div>
+          <Navbar />   
         <img src={logo} />
         <Jumbotron>
         <Link to={routes.HOME}><Button>Welcome back to Trello Geck App!</Button></Link>
