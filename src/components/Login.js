@@ -7,7 +7,7 @@ import { Link, withRouter } from "react-router-dom";
 import * as routes from "../constants";
 import validator from "validator";//form valitation
 import axios from "axios";//handling requests/promise based HTTP client
-import  Navbar_Unreg from './Navbar';
+import  {Navbar_Unreg} from './Navbar';
 
 
 import { 
@@ -97,7 +97,8 @@ class Login_Form extends Component{
             const {errors, data, loading} = this.state;
          
             return( 
-                
+                <div>
+                <Navbar_Unreg/>
                 <Well>
                 <Grid>
                     <Row className="show-grid" >     
@@ -140,7 +141,7 @@ class Login_Form extends Component{
               </Row>
               </Grid>
               </Well>
-            
+            </div>
             ); 
     }
 }

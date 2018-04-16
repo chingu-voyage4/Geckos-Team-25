@@ -5,6 +5,7 @@ import './signUp.css'
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
 import axios from "axios";
+import  {Navbar_Unreg} from './Navbar';
 
 import {  
     Button, 
@@ -63,6 +64,7 @@ class SignUp_Form extends Component{
             return( 
                
               <div>
+                <Navbar_Unreg />
                 <Well>
                     
                 <Grid>

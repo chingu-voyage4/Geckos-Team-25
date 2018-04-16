@@ -1,7 +1,7 @@
 .main-home-window{
     height:100%;
     width: 100%;
-    background-color: rgba(21, 78, 184, 0.705);
+    background-color: rgba(0, 0, 255, 1);
 }
 .main-home{
     display: flex;

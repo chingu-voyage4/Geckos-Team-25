@@ -50,7 +50,7 @@ export class Boards extends Component{
 
         return (
                 <div id="create-modal">
-                    <p>Create new board</p>
+                <p>Create new board</p>
                 </div> 
         );
         

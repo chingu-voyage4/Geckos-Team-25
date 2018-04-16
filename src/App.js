@@ -17,7 +17,12 @@ class App extends Component {
    constructor(props){
      super(props);
      this.state = {
-       isLoggedIn :true
+       isLoggedIn :true,
+       style:{
+         backgroundColor:'#fbc23a',
+         backgroundImage: ''
+       }
+      
      }
 
     
@@ -30,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="App" style={this.state.style}>
             
             <Route
               exact path={routes.HOME}
