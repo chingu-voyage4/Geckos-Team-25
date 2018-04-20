@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+import Navbar from './components/Navbar';
 import MainHome from './components/MainHome';
 import SignUp_Form from './components/signUp';
 import Login_Form from './components/Login';
@@ -31,8 +31,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-            
-            <Route
+           <Navbar isLoggedIn={this.state.isLoggedIn} />
+           <Boards/> 
+           {/* <Route
               exact path={routes.HOME}
                 component = { () => <MainHome />}
             />
@@ -52,7 +53,7 @@ class App extends Component {
             <Route
               exact path={routes.DASHBOARD}
                 component = { () => <Dashboard />}
-            />    
+            />*/}    
         </div>
       </Router> 
     );

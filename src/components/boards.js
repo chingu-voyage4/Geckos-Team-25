@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './boards.css'
-
+import './Boards.css'
+import {background} from './background pics/BulkData';
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
@@ -16,8 +16,9 @@ export class Boards extends Component{
 // Board array should be changed to a map later on or an object to tidy things up a bit and allow easier exporting 
 // to the other componnets or to the API to the database for storage
     this.state={ board : ["Welcome!, take a tour", "Make super bomb pancakes"]   };
+    this.handleCreate=this.handleCreate.bind(this);
 //Still I have no clue what is going on here but it makes the this statement work as it is suppose to 
-    this.displayBoards=this.displayBoards.bind(this);
+    
    }
 // this is what is displaying    
     render(){
@@ -26,38 +27,85 @@ export class Boards extends Component{
             <div className="display-boards">
             <div> <i className="far fa-user"></i><strong id="personal-boards-heading">Personal Boards</strong></div>
                 <div className="personal-boards">
-                    {this.displayBoards()}
+                    <DisplayBoards boards={this.state.board}/>
                     {this.createBoards()}
+                    {this.handleCreate()}
 
                 </div>
             </div>
         );
     }
 
-    displayBoards(){
-        
-        //Iterating over the Diffrent Names of the Boards and then making them each a dic Component
-        return (
-        this.state.board.map(n => 
-                <div className="regular-board back-ground-image"><p>{n}</p></div>  
-            )
-        );
-    }
+   
 
+   handleCreate(){
+    
+       return (
+            <CreateModal/>
+
+        );
+    
+    }
     createBoards(event){
         // when this Element is created a new div componet is rendered 
-
+        
 
         return (
-                <div id="create-modal">
-                    <p>Create new board</p>
+                <div id="create-modal" onClick={this.handleCreate()}>
+                    <p >Create new board</p>
+                   
                 </div> 
         );
         
+    
     }
+    }
+
+
+
+ // Create PopUp
+ class CreateModal extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state={
+            boardName:"",
+            boardBackgrounds:""
+        }
+        this.handleCreateModal=this.handleCreateModal.bind(this);
+    } 
+
+    handleCreateModal(e){
+        this.setState({
+            boardName:e.target.value,
+        })
+    }
+
+    render(){
+    return(
+         <div className="create-modal-render">
+             <div className="CreateModal-Naming">
+                 <input type="text/submit" placeholder="Add board title" value={this.state.boardName} onChange={this.handleCreateModal}/>
+             </div>
+             <div className="CreateModal-background"></div>
+         </div>
+
+     );
+    }
+ }   
+// Component to Display Boards
+function DisplayBoards(props){
+   const styles={
+       display:"flex",
+   }     
+    //Iterating over the Diffrent Names of the Boards and then making them each a dic Component
+    return (
+<div style={styles}>
+    {props.boards.map(n => 
+            <div className="regular-board back-ground-image"><p>{n}</p></div>  
+        )}
+        </div>
+    );
 }
-
-
-
 
  

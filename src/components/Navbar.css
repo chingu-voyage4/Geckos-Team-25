@@ -175,7 +175,7 @@ hr{
 }
  
 .navbar-registered .plus-popup{
-  display:flex;
+  display:none;
   font-size: 12px;
   padding:0.1%;
   flex-direction: column;
