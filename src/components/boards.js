@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Boards.css'
-import {background} from './background pics/BulkData';
+import {background} from './BulkData';
 
 import { Link } from "react-router-dom";
 import * as routes from "../constants";
@@ -15,11 +15,25 @@ export class Boards extends Component{
 // A placeholder that should remain just to work as filler
 // Board array should be changed to a map later on or an object to tidy things up a bit and allow easier exporting 
 // to the other componnets or to the API to the database for storage
-    this.state={ board : ["Welcome!, take a tour", "Make super bomb pancakes"]   };
+    this.state={ board : [{name:"Welcome!, take a tour", background:"rgb(2, 106, 167)"},   
+                          {name:"Make super bomb pancakes",background:"rgb(2, 106, 167)"}
+                        ],
+                 show  : false,   };
     this.handleCreate=this.handleCreate.bind(this);
-//Still I have no clue what is going on here but it makes the this statement work as it is suppose to 
+    this.createPopupShow=this.createPopupShow.bind(this);
+    this.handleUpdate=this.handleUpdate.bind(this);
+
     
    }
+   handleUpdate(next){
+    
+       this.setState((currentState)=>{
+         return{
+             board: currentState.board.concat([   next   ])
+}})
+
+}
+
 // this is what is displaying    
     render(){
 
@@ -30,18 +44,22 @@ export class Boards extends Component{
                     <DisplayBoards boards={this.state.board}/>
                     {this.createBoards()}
                     {this.handleCreate()}
-
+                    {console.log(this.state)}
                 </div>
             </div>
         );
     }
 
-   
+  createPopupShow(){
+      this.setState({
+          show:!this.state.show
+      });
+  }
 
    handleCreate(){
     
        return (
-            <CreateModal/>
+            <CreateModal show={this.state.show} toggle={this.createPopupShow} submit={this.handleUpdate}/>
 
         );
     
@@ -51,7 +69,7 @@ export class Boards extends Component{
         
 
         return (
-                <div id="create-modal" onClick={this.handleCreate()}>
+                <div id="create-modal"  onClick={this.createPopupShow}>
                     <p >Create new board</p>
                    
                 </div> 
@@ -69,25 +87,54 @@ export class Boards extends Component{
         super(props);
 
         this.state={
-            boardName:"",
-            boardBackgrounds:""
+            name:"",
+            background:""
         }
         this.handleCreateModal=this.handleCreateModal.bind(this);
+        this.handleCreateModalPic=this.handleCreateModalPic.bind(this);
+        this.handleCreateModalPic=this.handleCreateModalPic.bind(this);
+        this.submitBoard=this.submitBoard.bind(this);
     } 
+   
+
 
     handleCreateModal(e){
         this.setState({
-            boardName:e.target.value,
-        })
+            name:e.target.value
+        });
+    }
+    handleCreateModalPic(pic) {
+        this.setState({
+           background: pic
+        });
+    }
+    submitBoard(){
+    
+        return(
+        <Boards newData={this.state}/>);
+
+       
     }
 
     render(){
+        if (!this.props.show){
+            return null;
+        }
     return(
          <div className="create-modal-render">
+             <div className="create-modal-positioning">
              <div className="CreateModal-Naming">
-                 <input type="text/submit" placeholder="Add board title" value={this.state.boardName} onChange={this.handleCreateModal}/>
+                <input type="text" placeholder="Add board title" value={this.state.name} onChange={this.handleCreateModal}/>
+                <button type="button" onClick={()=>this.props.submit({name:this.state.name,background:`url(${this.state.background})`}) }>Create Board</button>
+                <button type="button" onClick={this.props.toggle}>X</button>
              </div>
-             <div className="CreateModal-background"></div>
+             <div className="CreateModal-backgrounds">
+                 {background.map((b)=>
+                     <div className="backgrounds" onClick={()=> this.handleCreateModalPic(b)} style={{"backgroundImage":`url(${b})`, backgroundSize:'cover',height:"70px",width:"90px"}} ></div>
+                 )}
+
+             </div>
+             </div>
          </div>
 
      );
@@ -95,14 +142,12 @@ export class Boards extends Component{
  }   
 // Component to Display Boards
 function DisplayBoards(props){
-   const styles={
-       display:"flex",
-   }     
+        
     //Iterating over the Diffrent Names of the Boards and then making them each a dic Component
     return (
-<div style={styles}>
+<div className="boards" >
     {props.boards.map(n => 
-            <div className="regular-board back-ground-image"><p>{n}</p></div>  
+            <div className="regular-board" style={{"background":n.background, backgroundSize:"cover",}} ><p>{n.name}</p></div>  
         )}
         </div>
     );
