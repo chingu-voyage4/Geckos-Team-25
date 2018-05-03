@@ -205,7 +205,7 @@ export class Navbar_Unreg extends Component {
 
 
 // no longer using classes but functional componets with arrow functions
-const Navbar_Unreg = () => (
+export const Navbar_Unreg = () => (
   <ul className="navbar-unregistered">
   <li className="logo-unreg">
     <Link to={routes.HOME}>

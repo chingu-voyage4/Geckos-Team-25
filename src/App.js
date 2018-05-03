@@ -17,7 +17,13 @@ class App extends Component {
    constructor(props){
      super(props);
      this.state = {
-       isLoggedIn :false
+
+       isLoggedIn :true,
+       style:{
+         backgroundColor:'#fbc23a',
+         backgroundImage: ''
+       }
+
      }
 
     
@@ -30,9 +36,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          {/* <Navbar isLoggedIn={this.state.isLoggedIn} />*/}
+
+        <div className="App" style={this.state.style}>
            
+
             <Route
               exact path={routes.HOME}
                 component = { () => <MainHome />}

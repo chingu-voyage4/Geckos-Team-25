@@ -10,7 +10,7 @@ class Dashaboard extends Component {
     return (
       <div>
         <NavbarAuth/>
-       <h1>This the Dashaboard</h1>      
+       <h1>This the Dashboard</h1>      
        <Boards/>
       </div>
     );

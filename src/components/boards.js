@@ -69,9 +69,11 @@ export class Boards extends Component{
         
 
         return (
+
                 <div id="create-modal"  onClick={this.createPopupShow}>
                     <p >Create new board</p>
                    
+
                 </div> 
         );
         
