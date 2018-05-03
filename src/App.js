@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+import Navbar from './components/Navbar';
 import MainHome from './components/MainHome';
 import SignUp_Form from './components/signUp';
 import Login_Form from './components/Login';
@@ -17,12 +17,13 @@ class App extends Component {
    constructor(props){
      super(props);
      this.state = {
+
        isLoggedIn :true,
        style:{
          backgroundColor:'#fbc23a',
          backgroundImage: ''
        }
-      
+
      }
 
     
@@ -35,8 +36,10 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div className="App" style={this.state.style}>
-            
+           
+
             <Route
               exact path={routes.HOME}
                 component = { () => <MainHome />}
