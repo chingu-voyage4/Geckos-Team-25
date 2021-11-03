@@ -12,7 +12,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-    "validator": "^9.4.1"
+    "validator": "^13.7.0"
   },
   "scripts": {
     "server": "node trello-geck-api/server.js",
