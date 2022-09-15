@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "concurrently": "^3.5.1",
     "mongoose": "^5.0.12",
     "react": "^16.2.0",
